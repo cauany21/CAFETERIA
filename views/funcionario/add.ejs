@@ -1,0 +1,34 @@
+<%- include('../cabecalho.ejs') %>
+
+<h1>Adicionar Funcionário</h1>
+<a href="/funcionario/lst">Listar Funcionários</a>
+
+<form method="post">
+    <label>ID do Funcionário:</label>
+    <input type="text" name="id_funcionario" required><br>
+
+    <label>Nome:</label>
+    <input type="text" name="nome" required><br>
+
+    <label>Cargo:</label>
+    <input type="text" name="cargo" required><br>
+
+    <label>Telefone:</label>
+    <input type="text" name="telefone" required><br>
+
+    <label>Salário:</label>
+    <input type="number" name="salario" required><br>
+
+    <label>Data de Admissão:</label>
+    <input type="date" name="data_admissao" required><br>
+
+    <label>CPF:</label>
+    <input type="text" name="cpf" required><br>
+
+    <label>Email:</label>
+    <input type="email" name="email" required><br>
+
+    <button type="submit">Cadastrar</button>
+</form>
+
+<%- include('../rodape.ejs') %>

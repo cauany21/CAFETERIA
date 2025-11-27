@@ -1,0 +1,63 @@
+<%- include('../cabecalho.ejs') %>
+
+<h1>Editar Produto</h1>
+<a href="/produto/lst">Listar</a>
+
+<form method="post" enctype="multipart/form-data">
+    <input type="hidden" name="id" value="<%= Produto._id %>">
+
+    <label>ID do Produto:</label>
+    <input type="text" name="id_produto" value="<%= Produto.id_produto %>" required><br>
+
+    <label>Nome:</label>
+    <input type="text" name="nome" value="<%= Produto.nome %>" required><br>
+
+    <label>Preço:</label>
+    <input type="number" step="0.01" name="preco" value="<%= Produto.preco %>" required><br>
+
+    <label>Categoria:</label>
+    <input type="text" name="categoria" value="<%= Produto.categoria %>" required><br>
+
+    <label>Descrição:</label>
+    <input type="text" name="descricao" value="<%= Produto.descricao %>" required><br>
+
+    <label>Cafeteria:</label>
+    <select name="cafeteria" required>
+        <option value="">Selecione a cafeteria</option>
+        <% if (Cafeteria && Cafeteria.length) { Cafeteria.forEach(c => { %>
+            <option value="<%= c._id %>" <%= Produto.cafeteria && (Produto.cafeteria.equals ? Produto.cafeteria.equals(c._id) : Produto.cafeteria.toString() === c._id.toString()) ? 'selected' : '' %>><%= c.nome %></option>
+        <% }) } %>
+    </select><br>
+
+    <% if (Produto.imagem) { %>
+        <label>Imagem atual:</label><br>
+        <img src="/img/<%= Produto.imagem %>" alt="Imagem do produto" style="max-width:150px;display:block;margin-bottom:10px;"><br>
+    <% } %>
+
+    <label>Alterar imagem (opcional):</label>
+    <input type="file" name="imagem" id="imagemInputEdt" accept="image/*"><br>
+    <img id="previewEdt" src="#" alt="Pré-visualização" style="display:none;max-width:200px;margin-top:8px;border-radius:8px;border:1px solid #ddd;" />
+
+    <button type="submit">Salvar</button>
+</form>
+
+<script>
+const inputEdt = document.getElementById('imagemInputEdt');
+const previewEdt = document.getElementById('previewEdt');
+inputEdt.addEventListener('change', function(e){
+    const [file] = this.files;
+    if (file) {
+        const reader = new FileReader();
+        reader.onload = (ev) => {
+            previewEdt.src = ev.target.result;
+            previewEdt.style.display = 'block';
+        };
+        reader.readAsDataURL(file);
+    } else {
+        previewEdt.src = '#';
+        previewEdt.style.display = 'none';
+    }
+});
+</script>
+
+<%- include('../rodape.ejs') %>

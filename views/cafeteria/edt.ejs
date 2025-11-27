@@ -1,0 +1,64 @@
+<%- include('../cabecalho.ejs') %>
+
+<h1 class="titulo-cafeteria"><i class="fa fa-store"></i> Editar Cafeteria</h1>
+<a href="/cafeteria/lst" class="btn">Listar Cafeterias</a>
+
+<form method="post" class="form-cafeteria">
+    <input type="hidden" name="id" value="<%= cafeteria._id %>">
+    <div class="form-group">
+        <label>Nome:</label>
+        <input type="text" name="nome" value="<%= cafeteria.nome %>" required>
+    </div>
+    <div class="form-group">
+        <label>Endereço:</label>
+        <input type="text" name="endereco" value="<%= cafeteria.endereco %>" required>
+    </div>
+    <div class="form-group">
+        <label>Telefone:</label>
+        <input type="text" name="telefone" value="<%= cafeteria.telefone %>" required>
+    </div>
+    <div class="form-group">
+        <label>CNPJ:</label>
+        <input type="text" name="cnpj" value="<%= cafeteria.cnpj %>" required>
+    </div>
+    <div class="form-group">
+        <label>Horário de Funcionamento:</label>
+        <input type="text" name="horario" value="<%= cafeteria.horario %>" required>
+    </div>
+    <button type="submit" class="btn edit"><i class="fa fa-save"></i> Salvar</button>
+</form>
+
+<%- include('../rodape.ejs') %>
+
+<style>
+.titulo-cafeteria {
+  color: #795548;
+  text-align: center;
+  margin-bottom: 20px;
+}
+.form-cafeteria {
+  max-width: 500px;
+  margin: 0 auto;
+  background: #fff8f0;
+  padding: 24px 32px 18px 32px;
+  border-radius: 12px;
+  box-shadow: 0 2px 12px #e0cfc2;
+}
+.form-cafeteria .form-group {
+  margin-bottom: 16px;
+}
+.form-cafeteria label {
+  color: #4e342e;
+  font-weight: 600;
+  margin-bottom: 6px;
+  display: block;
+}
+.form-cafeteria input {
+  width: 100%;
+  padding: 10px;
+  border: 1.5px solid #bfa98a;
+  border-radius: 8px;
+  background-color: #fffaf5;
+  margin-bottom: 4px;
+}
+</style>

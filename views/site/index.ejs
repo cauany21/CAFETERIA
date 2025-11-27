@@ -1,0 +1,422 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Café Belle Vie - Cafeteria Premium</title>
+    <link rel="stylesheet" href="/css/site.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="header-container">
+            <div class="logo">
+                <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M17 8h1a4 4 0 1 1 0 8h-1"/>
+                    <path d="M3 8h14v9a4 4 0 0 1-4 4H7a4 4 0 0 1-4-4Z"/>
+                    <line x1="6" x2="6" y1="2" y2="4"/>
+                    <line x1="10" x2="10" y1="2" y2="4"/>
+                    <line x1="14" x2="14" y1="2" y2="4"/>
+                </svg>
+                <h1>Café Belle Vie</h1>
+            </div>
+
+            <nav id="desktop-nav">
+                <a href="#inicio">Início</a>
+                <a href="#sobre">Sobre</a>
+                <a href="#produtos">Produtos</a>
+                <a href="#fornecedores">Fornecedores</a>
+                <a href="#contato">Contato</a>
+            </nav>
+
+            <button class="mobile-menu-btn" onclick="toggleMobileMenu()">
+                <svg id="menu-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <line x1="3" x2="21" y1="6" y2="6"/>
+                    <line x1="3" x2="21" y1="12" y2="12"/>
+                    <line x1="3" x2="21" y1="18" y2="18"/>
+                </svg>
+            </button>
+        </div>
+
+        <nav id="mobile-nav" class="mobile-nav">
+            <a href="#inicio" onclick="toggleMobileMenu()">Início</a>
+            <a href="#sobre" onclick="toggleMobileMenu()">Sobre</a>
+            <a href="#produtos" onclick="toggleMobileMenu()">Produtos</a>
+            <a href="#fornecedores" onclick="toggleMobileMenu()">Fornecedores</a>
+            <a href="#contato" onclick="toggleMobileMenu()">Contato</a>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="inicio" class="hero">
+        <img src="https://images.unsplash.com/photo-1521017432531-fbd92d768814?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxjb2ZmZWUlMjBzaG9wJTIwaW50ZXJpb3J8ZW58MXx8fHwxNzY0MjA0MzIzfDA&ixlib=rb-4.1.0&q=80&w=1080" alt="Café Belle Vie Interior" class="hero-bg">
+        <div class="hero-overlay"></div>
+        <div class="hero-content">
+            <h1>Café Belle Vie</h1>
+            <p>Onde cada xícara conta uma história de sabor e tradição</p>
+            <button class="btn-primary" onclick="document.getElementById('produtos').scrollIntoView({behavior: 'smooth'})">
+                Conheça Nossos Produtos
+            </button>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="sobre" class="about">
+        <div class="container">
+            <h2 class="section-title">Sobre o Café Belle Vie</h2>
+
+            <div class="about-grid">
+                <div class="about-text">
+                    <p>
+                        Fundado em 2015, o Café Belle Vie nasceu do sonho de criar um espaço onde a qualidade do café 
+                        se encontra com a hospitalidade genuína. Nosso nome, que significa "Bela Vida" em francês, 
+                        reflete nossa filosofia: celebrar os momentos simples da vida com uma excelente xícara de café.
+                    </p>
+                    <p>
+                        Trabalhamos apenas com grãos selecionados de produtores locais e internacionais, 
+                        garantindo que cada xícara servida seja uma experiência única e memorável.
+                    </p>
+                    <p>
+                        Nosso compromisso vai além do café. Acreditamos em práticas sustentáveis, 
+                        comércio justo e no fortalecimento das comunidades produtoras de café.
+                    </p>
+                </div>
+
+                <div class="info-cards">
+                    <div class="info-card">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/>
+                            <circle cx="12" cy="10" r="3"/>
+                        </svg>
+                        <div>
+                            <h4>Localização</h4>
+                            <p>Rua das Flores, 123 - Centro<br>São Paulo, SP</p>
+                        </div>
+                    </div>
+
+                    <div class="info-card">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <circle cx="12" cy="12" r="10"/>
+                            <polyline points="12 6 12 12 16 14"/>
+                        </svg>
+                        <div>
+                            <h4>Horário de Funcionamento</h4>
+                            <p>Segunda a Sexta: 7h - 20h<br>
+                            Sábado e Domingo: 8h - 22h</p>
+                        </div>
+                    </div>
+
+                    <div class="info-card">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"/>
+                        </svg>
+                        <div>
+                            <h4>Nossa Missão</h4>
+                            <p>Proporcionar experiências memoráveis através de cafés excepcionais e atendimento caloroso.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Products Section -->
+    <section id="produtos" class="products">
+        <div class="container">
+            <h2 class="section-title">Nossos Produtos</h2>
+            <p class="section-subtitle">
+                Cada produto é cuidadosamente selecionado e preparado para proporcionar 
+                a melhor experiência para nossos clientes
+            </p>
+
+            <div class="products-grid">
+                <div class="product-card">
+                    <div class="product-image-container">
+                        <img src="https://images.unsplash.com/photo-1645445644664-8f44112f334c?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxlc3ByZXNzbyUyMGNvZmZlZSUyMGN1cHxlbnwxfHx8fDE3NjQyMDQ1MTd8MA&ixlib=rb-4.1.0&q=80&w=1080" alt="Espresso Clássico" class="product-image">
+                    </div>
+                    <div class="product-info">
+                        <h3>Espresso Clássico</h3>
+                        <p>Intenso e aromático, preparado com grãos 100% arábica torrados artesanalmente.</p>
+                        <p class="product-price">R$ 8,00</p>
+                    </div>
+                </div>
+
+                <div class="product-card">
+                    <div class="product-image-container">
+                        <img src="https://images.unsplash.com/photo-1645445644664-8f44112f334c?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxlc3ByZXNzbyUyMGNvZmZlZSUyMGN1cHxlbnwxfHx8fDE3NjQyMDQ1MTd8MA&ixlib=rb-4.1.0&q=80&w=1080" alt="Cappuccino Especial" class="product-image">
+                    </div>
+                    <div class="product-info">
+                        <h3>Cappuccino Especial</h3>
+                        <p>Equilibrio perfeito entre espresso, leite vaporizado e espuma cremosa.</p>
+                        <p class="product-price">R$ 12,00</p>
+                    </div>
+                </div>
+
+                <div class="product-card">
+                    <div class="product-image-container">
+                        <img src="https://images.unsplash.com/photo-1672570050756-4f1953bde478?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxjb2ZmZWUlMjBiZWFucyUyMHJvYXN0ZWR8ZW58MXx8fHwxNzY0MTg2NDQ1fDA&ixlib=rb-4.1.0&q=80&w=1080" alt="Café Coado" class="product-image">
+                    </div>
+                    <div class="product-info">
+                        <h3>Café Coado</h3>
+                        <p>Método tradicional que realça as notas únicas de cada origem.</p>
+                        <p class="product-price">R$ 10,00</p>
+                    </div>
+                </div>
+
+                <div class="product-card">
+                    <div class="product-image-container">
+                        <img src="https://images.unsplash.com/photo-1645445644664-8f44112f334c?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxlc3ByZXNzbyUyMGNvZmZlZSUyMGN1cHxlbnwxfHx8fDE3NjQyMDQ1MTd8MA&ixlib=rb-4.1.0&q=80&w=1080" alt="Latte Art" class="product-image">
+                    </div>
+                    <div class="product-info">
+                        <h3>Latte Art</h3>
+                        <p>Café com leite decorado artisticamente, uma experiência visual e sensorial.</p>
+                        <p class="product-price">R$ 14,00</p>
+                    </div>
+                </div>
+
+                <div class="product-card">
+                    <div class="product-image-container">
+                        <img src="https://images.unsplash.com/photo-1587912001191-0cd4f14fd89e?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxwYXN0cmllcyUyMGNyb2lzc2FudHxlbnwxfHx8fDE3NjQyNDMwNjB8MA&ixlib=rb-4.1.0&q=80&w=1080" alt="Croissant Artesanal" class="product-image">
+                    </div>
+                    <div class="product-info">
+                        <h3>Croissant Artesanal</h3>
+                        <p>Folhado e crocante, preparado diariamente com manteiga francesa.</p>
+                        <p class="product-price">R$ 9,00</p>
+                    </div>
+                </div>
+
+                <div class="product-card">
+                    <div class="product-image-container">
+                        <img src="https://images.unsplash.com/photo-1587912001191-0cd4f14fd89e?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxwYXN0cmllcyUyMGNyb2lzc2FudHxlbnwxfHx8fDE3NjQyNDMwNjB8MA&ixlib=rb-4.1.0&q=80&w=1080" alt="Doces Variados" class="product-image">
+                    </div>
+                    <div class="product-info">
+                        <h3>Doces Variados</h3>
+                        <p>Seleção de brownies, cookies e bolos caseiros.</p>
+                        <p class="product-price">A partir de R$ 7,00</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Suppliers Section -->
+    <section id="fornecedores" class="suppliers">
+        <div class="container">
+            <h2 class="section-title">Nossos Fornecedores</h2>
+            <p class="section-subtitle">
+                Trabalhamos com os melhores produtores e torrefadores, garantindo qualidade 
+                e sustentabilidade em toda a cadeia produtiva
+            </p>
+
+            <div class="suppliers-grid">
+                <div class="supplier-card">
+                    <div class="supplier-header">
+                        <div class="supplier-icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M11 20A7 7 0 0 1 9.8 6.1C15.5 5 17 4.48 19 2c1 2 2 4.18 2 8 0 5.5-4.78 10-10 10Z"/>
+                                <path d="M2 21c0-3 1.85-5.36 5.08-6C9.5 14.52 12 13 13 12"/>
+                            </svg>
+                        </div>
+                        <div class="supplier-content">
+                            <h3>Fazenda Serra Verde</h3>
+                            <p class="supplier-location">Minas Gerais, Brasil</p>
+                            <p class="supplier-description">Produtor de cafés especiais com certificação orgânica. Parceiro desde 2015.</p>
+                            <div class="supplier-specialty">
+                                <strong>Especialidade:</strong> Café Arábica Bourbon
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="supplier-card">
+                    <div class="supplier-header">
+                        <div class="supplier-icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/>
+                                <circle cx="9" cy="7" r="4"/>
+                                <path d="M22 21v-2a4 4 0 0 0-3-3.87"/>
+                                <path d="M16 3.13a4 4 0 0 1 0 7.75"/>
+                            </svg>
+                        </div>
+                        <div class="supplier-content">
+                            <h3>Cooperativa Café do Alto</h3>
+                            <p class="supplier-location">São Paulo, Brasil</p>
+                            <p class="supplier-description">Cooperativa familiar que cultiva café de forma sustentável há três gerações.</p>
+                            <div class="supplier-specialty">
+                                <strong>Especialidade:</strong> Café Catuaí Amarelo
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="supplier-card">
+                    <div class="supplier-header">
+                        <div class="supplier-icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <circle cx="12" cy="12" r="10"/>
+                                <path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20"/>
+                                <path d="M2 12h20"/>
+                            </svg>
+                        </div>
+                        <div class="supplier-content">
+                            <h3>Ethiopian Coffee Collective</h3>
+                            <p class="supplier-location">Etiópia</p>
+                            <p class="supplier-description">Importação direta de cafés etíopes com notas florais e frutadas únicas.</p>
+                            <div class="supplier-specialty">
+                                <strong>Especialidade:</strong> Café Etíope Natural
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="supplier-card">
+                    <div class="supplier-header">
+                        <div class="supplier-icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <circle cx="12" cy="8" r="6"/>
+                                <path d="M15.477 12.89 17 22l-5-3-5 3 1.523-9.11"/>
+                            </svg>
+                        </div>
+                        <div class="supplier-content">
+                            <h3>Torrefação Artesanal Nobre</h3>
+                            <p class="supplier-location">Rio de Janeiro, Brasil</p>
+                            <p class="supplier-description">Torrefação premiada especializada em perfis de torra para cafés especiais.</p>
+                            <div class="supplier-specialty">
+                                <strong>Especialidade:</strong> Torras Personalizadas
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="sustainability-banner">
+                <h3>Compromisso com a Sustentabilidade</h3>
+                <p>
+                    Todos os nossos fornecedores são cuidadosamente selecionados com base em critérios 
+                    de qualidade, práticas sustentáveis e comércio justo. Acreditamos que um bom café 
+                    começa com o respeito aos produtores e ao meio ambiente.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contato" class="contact">
+        <div class="container">
+            <h2 class="section-title">Entre em Contato</h2>
+
+            <div class="contact-grid">
+                <div class="contact-info">
+                    <h3>Visite-nos</h3>
+                    <div class="contact-items">
+                        <div class="contact-item">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/>
+                                <circle cx="12" cy="10" r="3"/>
+                            </svg>
+                            <div>
+                                <h4>Endereço</h4>
+                                <p>Rua das Flores, 123 - Centro<br>São Paulo, SP - CEP: 01234-567</p>
+                            </div>
+                        </div>
+
+                        <div class="contact-item">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/>
+                            </svg>
+                            <div>
+                                <h4>Telefone</h4>
+                                <p>(11) 3456-7890<br>(11) 98765-4321</p>
+                            </div>
+                        </div>
+
+                        <div class="contact-item">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <rect width="20" height="16" x="2" y="4" rx="2"/>
+                                <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/>
+                            </svg>
+                            <div>
+                                <h4>E-mail</h4>
+                                <p>contato@cafebellevie.com.br</p>
+                            </div>
+                        </div>
+
+                        <div>
+                            <h4>Redes Sociais</h4>
+                            <div class="social-links">
+                                <a href="#" class="social-link">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                        <rect width="20" height="20" x="2" y="2" rx="5" ry="5"/>
+                                        <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/>
+                                        <line x1="17.5" x2="17.51" y1="6.5" y2="6.5"/>
+                                    </svg>
+                                </a>
+                                <a href="#" class="social-link">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                        <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/>
+                                    </svg>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="contact-form">
+                    <h3>Envie uma Mensagem</h3>
+                    <form onsubmit="handleSubmit(event)">
+                        <div class="form-group">
+                            <label for="name">Nome</label>
+                            <input type="text" id="name" name="name" placeholder="Seu nome" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="email">E-mail</label>
+                            <input type="email" id="email" name="email" placeholder="seu@email.com" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="message">Mensagem</label>
+                            <textarea id="message" name="message" rows="5" placeholder="Sua mensagem..." required></textarea>
+                        </div>
+
+                        <button type="submit" class="btn-submit">Enviar Mensagem</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-logo">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M17 8h1a4 4 0 1 1 0 8h-1"/>
+                    <path d="M3 8h14v9a4 4 0 0 1-4 4H7a4 4 0 0 1-4-4Z"/>
+                    <line x1="6" x2="6" y1="2" y2="4"/>
+                    <line x1="10" x2="10" y1="2" y2="4"/>
+                    <line x1="14" x2="14" y1="2" y2="4"/>
+                </svg>
+                <span>Café Belle Vie</span>
+            </div>
+            <p>© 2024 Café Belle Vie. Todos os direitos reservados.</p>
+        </div>
+    </footer>
+
+    <script>
+        function toggleMobileMenu() {
+            const mobileNav = document.getElementById('mobile-nav');
+            mobileNav.classList.toggle('active');
+        }
+
+        function handleSubmit(event) {
+            event.preventDefault();
+            alert('Obrigado por entrar em contato! Responderemos em breve.');
+            event.target.reset();
+        }
+    </script>
+</body>
+</html>

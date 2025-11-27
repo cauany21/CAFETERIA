@@ -1,0 +1,47 @@
+<%- include('cabecalho.ejs') %>
+
+<div class="home-banner">
+  <img src="/css/cafeteria-banner.jpg" alt="Café Belle Vie" class="banner-img">
+  <h1 class="home-title"><i class="fa fa-mug-hot"></i> Bem-vindo ao Sistema de Gerenciamento <span>Café Belle Vie</span></h1>
+  <p class="home-desc">Gerencie sua cafeteria de forma simples, elegante e eficiente.<br>Utilize o menu acima para acessar as funcionalidades.</p>
+</div>
+
+<%- include('rodape.ejs') %>
+
+<style>
+.home-banner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-top: 30px;
+  margin-bottom: 30px;
+}
+.banner-img {
+  width: 100%;
+  max-width: 400px;
+  border-radius: 16px;
+  box-shadow: 0 4px 24px #e0cfc2;
+  margin-bottom: 24px;
+}
+.home-title {
+  color: #795548;
+  font-size: 2.2rem;
+  font-weight: 700;
+  text-align: center;
+  margin-bottom: 12px;
+}
+.home-title span {
+  color: #a67c52;
+}
+.home-desc {
+  color: #4e342e;
+  font-size: 1.2rem;
+  text-align: center;
+  background: #fff8f0;
+  padding: 18px 32px;
+  border-radius: 10px;
+  box-shadow: 0 1px 8px #e0cfc2;
+  margin-top: 0;
+}
+</style>

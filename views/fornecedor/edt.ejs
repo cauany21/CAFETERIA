@@ -1,0 +1,33 @@
+<%- include('../cabecalho.ejs') %>
+
+<h1>Editar Fornecedor</h1>
+<a href="/fornecedor/lst">Listar</a>
+
+<form method="post">
+    <input type="hidden" name="id" value="<%= Fornecedor._id %>">
+
+    <label>ID do Fornecedor:</label>
+    <input type="text" name="id_fornecedor" value="<%= Fornecedor.id_fornecedor %>" required><br>
+
+    <label>Nome:</label>
+    <input type="text" name="nome" value="<%= Fornecedor.nome %>" required><br>
+
+    <label>Telefone:</label>
+    <input type="text" name="telefone" value="<%= Fornecedor.telefone %>" required><br>
+
+    <label>Endereço:</label>
+    <input type="text" name="endereco" value="<%= Fornecedor.endereco %>" required><br>
+
+    <label>CNPJ:</label>
+    <input type="text" name="cnpj" value="<%= Fornecedor.cnpj %>" required><br>
+
+    <label>Email:</label>
+    <input type="email" name="email" value="<%= Fornecedor.email %>" required><br>
+
+    <label>Tipo de Produto:</label>
+    <input type="text" name="tipo_produto" value="<%= Fornecedor.tipo_produto %>" required><br>
+
+    <button type="submit">Salvar</button>
+</form>
+
+<%- include('../rodape.ejs') %>
