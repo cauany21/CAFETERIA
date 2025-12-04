@@ -1,9 +1,9 @@
 <%- include('../cabecalho.ejs') %>
 
 <h1 class="titulo-lista"><i class="fa fa-mug-hot"></i> Lista de Produtos</h1>
-<a href="/produto/add" class="btn acao"><i class="fa fa-plus"></i> Adicionar Novo</a>
+<a href="/admin/produto/add" class="btn acao"><i class="fa fa-plus"></i> Adicionar Novo</a>
 
-<form method="post" class="search" action="/produto/lst">
+<form method="post" class="search" action="/admin/produto/lst">
     <label>Pesquisar por nome:</label>
     <input type="text" name="nome">
     <button type="submit" class="btn acao"><i class="fa fa-search"></i> Buscar</button>
@@ -27,8 +27,8 @@
     <td><%= p.preco %></td>
     <td><%= p.descricao %></td>
     <td class="acoes">
-      <a href="/produto/edt/<%= p._id %>" class="btn acao"><i class="fa fa-edit"></i> Editar</a>
-    <a href="/produto/del/<%= p._id %>" class="btn acao" onclick="return confirm('Tem certeza que deseja excluir este produto?')"><i class="fa fa-trash"></i> Excluir</a>
+      <a href="/admin/produto/edt/<%= p._id %>" class="btn acao"><i class="fa fa-edit"></i> Editar</a>
+    <a href="/admin/produto/del/<%= p._id %>" class="btn acao" onclick="return confirm('Tem certeza que deseja excluir este produto?')"><i class="fa fa-trash"></i> Excluir</a>
     </td>
 </tr>
 <% }) %>

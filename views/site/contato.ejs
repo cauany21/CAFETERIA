@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contato - Café Belle Vie</title>
+    <link rel="stylesheet" href="/css/site.css">
+</head>
+<body>
+    <header>
+        <div class="header-container">
+            <div class="logo">
+                <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M17 8h1a4 4 0 1 1 0 8h-1"/>
+                    <path d="M3 8h14v9a4 4 0 0 1-4 4H7a4 4 0 0 1-4-4Z"/>
+                    <line x1="6" x2="6" y1="2" y2="4"/>
+                    <line x1="10" x2="10" y1="2" y2="4"/>
+                    <line x1="14" x2="14" y1="2" y2="4"/>
+                </svg>
+                <h1><a href="/" style="color: white; text-decoration: none;">Café Belle Vie</a></h1>
+            </div>
+
+            <nav id="desktop-nav">
+                <a href="/">Início</a>
+                <a href="/produtos">Produtos</a>
+                <a href="/cafeterias">Cafeterias</a>
+                <a href="#contato">Contato</a>
+                <a href="/admin" style="margin-left:12px;border-left:1px solid rgba(255,255,255,0.15);padding-left:12px;color:#fff;opacity:0.9;font-weight:600;">Admin</a>
+            </nav>
+
+            <button class="mobile-menu-btn" onclick="toggleMobileMenu()">
+                <svg id="menu-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <line x1="3" x2="21" y1="6" y2="6"/>
+                    <line x1="3" x2="21" y1="12" y2="12"/>
+                    <line x1="3" x2="21" y1="18" y2="18"/>
+                </svg>
+            </button>
+        </div>
+
+        <nav id="mobile-nav" class="mobile-nav">
+            <a href="/" onclick="toggleMobileMenu()">Início</a>
+            <a href="/produtos" onclick="toggleMobileMenu()">Produtos</a>
+            <a href="/cafeterias" onclick="toggleMobileMenu()">Cafeterias</a>
+            <a href="/contato" onclick="toggleMobileMenu()">Contato</a>
+            <a href="/admin" onclick="toggleMobileMenu()">Admin</a>
+        </nav>
+    </header>
+
+    <main style="max-width:900px;margin:40px auto;padding:0 20px;">
+        <h2>Entre em Contato</h2>
+        <p>Envie sua mensagem e retornaremos em breve.</p>
+
+        <form action="/contato" method="post" style="display:flex;flex-direction:column;gap:12px;">
+            <label>
+                Nome
+                <input type="text" name="nome" required style="width:100%;padding:10px;border:1px solid #ddd;border-radius:6px;">
+            </label>
+
+            <label>
+                E-mail
+                <input type="email" name="email" required style="width:100%;padding:10px;border:1px solid #ddd;border-radius:6px;">
+            </label>
+
+            <label>
+                Mensagem
+                <textarea name="mensagem" rows="6" required style="width:100%;padding:10px;border:1px solid #ddd;border-radius:6px;"></textarea>
+            </label>
+
+            <div>
+                <button type="submit" style="background:#8b6f47;color:#fff;padding:10px 20px;border:none;border-radius:6px;cursor:pointer;">Enviar Mensagem</button>
+                <a href="/" style="margin-left:12px;color:#8b6f47;text-decoration:none;">Voltar</a>
+            </div>
+        </form>
+    </main>
+
+    <footer style="background-color:#2c1810;color:white;text-align:center;padding:30px;margin-top:40px;">
+        <p>&copy; Café Belle Vie</p>
+    </footer>
+
+    <script>
+        function toggleMobileMenu() {
+            const mobileNav = document.getElementById('mobile-nav');
+            mobileNav.classList.toggle('active');
+        }
+    </script>
+</body>
+</html>

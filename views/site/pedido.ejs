@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Fazer Pedido - Café Belle Vie</title>
+  <link rel="stylesheet" href="/css/site.css">
+</head>
+<body>
+  <header>
+    <div class="header-container">
+      <div class="logo"><h1><a href="/" style="color:white;text-decoration:none">Café Belle Vie</a></h1></div>
+      <nav id="desktop-nav">
+        <a href="/">Início</a>
+        <a href="/produtos">Produtos</a>
+        <a href="/cafeterias">Cafeterias</a>
+        <a href="/contato">Contato</a>
+        <a href="/admin" style="margin-left:12px;border-left:1px solid rgba(255,255,255,0.15);padding-left:12px;color:#fff;opacity:0.9;font-weight:600;">Admin</a>
+      </nav>
+    </div>
+  </header>
+
+  <main style="max-width:900px;margin:40px auto;padding:0 20px;">
+    <h2>Fazer Pedido</h2>
+    <form action="/pedido" method="post" style="display:flex;flex-direction:column;gap:12px;">
+      <label>
+        Produto
+        <select name="produto" required>
+          <option value="">Selecione um produto</option>
+          <% produtos.forEach(p => { %>
+            <option value="<%= p._id %>" <%= (selected && selected==p._id) ? 'selected' : '' %>><%= p.nome %> — R$ <%= p.preco.toFixed(2) %> (<%= p.cafeteria ? p.cafeteria.nome : 'Cafeteria' %>)</option>
+          <% }) %>
+        </select>
+      </label>
+
+      <label>
+        Quantidade
+        <input type="number" name="quantidade" value="1" min="1" required>
+      </label>
+
+      <h3>Dados do cliente</h3>
+      <label>
+        Nome
+        <input type="text" name="nome" required>
+      </label>
+
+      <label>
+        E-mail
+        <input type="email" name="email">
+      </label>
+
+      <label>
+        Telefone
+        <input type="text" name="telefone">
+      </label>
+
+      <label>
+        Endereço (opcional)
+        <input type="text" name="endereco">
+      </label>
+
+      <div>
+        <button type="submit" style="background:#8b6f47;color:#fff;padding:10px 18px;border-radius:6px;border:none;">Enviar Pedido</button>
+        <a href="/produtos" style="margin-left:12px;color:#8b6f47;text-decoration:none;">Voltar</a>
+      </div>
+    </form>
+  </main>
+
+  <footer style="background:#2c1810;color:white;text-align:center;padding:30px;margin-top:40px;">
+    <p>&copy; Café Belle Vie</p>
+  </footer>
+</body>
+</html>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Pedido Recebido - Café Belle Vie</title>
+  <link rel="stylesheet" href="/css/site.css">
+</head>
+<body>
+  <header>
+    <div class="header-container">
+      <div class="logo"><h1><a href="/" style="color:white;text-decoration:none">Café Belle Vie</a></h1></div>
+      <nav id="desktop-nav">
+        <a href="/">Início</a>
+        <a href="/produtos">Produtos</a>
+        <a href="/cafeterias">Cafeterias</a>
+        <a href="/admin" style="margin-left:12px;border-left:1px solid rgba(255,255,255,0.15);padding-left:12px;color:#fff;opacity:0.9;font-weight:600;">Admin</a>
+      </nav>
+    </div>
+  </header>
+
+  <main style="max-width:800px;margin:60px auto;text-align:center;padding:0 20px;">
+    <h2>Pedido enviado com sucesso</h2>
+    <p>Obrigado, <strong><%= nome %></strong>! Seu pedido (ID: <strong><%= id %></strong>) foi recebido.</p>
+    <p>Total: <strong>R$ <%= total.toFixed(2) %></strong></p>
+    <p style="margin-top:20px;"><a href="/" style="color:#8b6f47;text-decoration:none;">Voltar para a página inicial</a></p>
+  </main>
+
+  <footer style="background:#2c1810;color:white;text-align:center;padding:30px;margin-top:40px;">
+    <p>&copy; Café Belle Vie</p>
+  </footer>
+</body>
+</html>

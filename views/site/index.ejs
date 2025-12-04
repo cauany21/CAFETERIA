@@ -25,11 +25,11 @@
             </div>
 
             <nav id="desktop-nav">
-                <a href="#inicio">Início</a>
-                <a href="#sobre">Sobre</a>
-                <a href="#produtos">Produtos</a>
-                <a href="#fornecedores">Fornecedores</a>
+                <a href="/">Início</a>
+                <a href="/produtos">Produtos</a>
+                <a href="/cafeterias">Cafeterias</a>
                 <a href="#contato">Contato</a>
+                <a href="/admin" style="margin-left:12px;border-left:1px solid rgba(255,255,255,0.15);padding-left:12px;color:#fff;opacity:0.9;font-weight:600;">Admin</a>
             </nav>
 
             <button class="mobile-menu-btn" onclick="toggleMobileMenu()">
@@ -42,11 +42,11 @@
         </div>
 
         <nav id="mobile-nav" class="mobile-nav">
-            <a href="#inicio" onclick="toggleMobileMenu()">Início</a>
-            <a href="#sobre" onclick="toggleMobileMenu()">Sobre</a>
-            <a href="#produtos" onclick="toggleMobileMenu()">Produtos</a>
-            <a href="#fornecedores" onclick="toggleMobileMenu()">Fornecedores</a>
+            <a href="/" onclick="toggleMobileMenu()">Início</a>
+            <a href="/produtos" onclick="toggleMobileMenu()">Produtos</a>
+            <a href="/cafeterias" onclick="toggleMobileMenu()">Cafeterias</a>
             <a href="#contato" onclick="toggleMobileMenu()">Contato</a>
+            <a href="/admin" onclick="toggleMobileMenu()">Admin</a>
         </nav>
     </header>
 
@@ -133,71 +133,30 @@
             </p>
 
             <div class="products-grid">
-                <div class="product-card">
-                    <div class="product-image-container">
-                        <img src="https://images.unsplash.com/photo-1645445644664-8f44112f334c?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxlc3ByZXNzbyUyMGNvZmZlZSUyMGN1cHxlbnwxfHx8fDE3NjQyMDQ1MTd8MA&ixlib=rb-4.1.0&q=80&w=1080" alt="Espresso Clássico" class="product-image">
-                    </div>
-                    <div class="product-info">
-                        <h3>Espresso Clássico</h3>
-                        <p>Intenso e aromático, preparado com grãos 100% arábica torrados artesanalmente.</p>
-                        <p class="product-price">R$ 8,00</p>
-                    </div>
-                </div>
+                <% if (produtos && produtos.length > 0) { %>
+                    <% produtos.forEach(produto => { %>
+                        <div class="product-card" onclick="window.location.href='/produto/<%= produto._id %>';" style="cursor: pointer;">
+                            <div class="product-image-container">
+                                <% if (produto.imagem) { %>
+                                    <img src="/img/<%= produto.imagem %>" alt="<%= produto.nome %>" class="product-image">
+                                <% } else { %>
+                                    <div style="width: 100%; height: 200px; background: linear-gradient(135deg, #c8a882 0%, #8b6f47 100%); display: flex; align-items: center; justify-content: center; font-size: 3rem; opacity: 0.3;">☕</div>
+                                <% } %>
+                            </div>
+                            <div class="product-info">
+                                <h3><%= produto.nome %></h3>
+                                <p><%= produto.descricao.substring(0, 100) %>...</p>
+                                <p class="product-price">R$ <%= produto.preco.toFixed(2) %></p>
+                            </div>
+                        </div>
+                    <% }); %>
+                <% } %>
+            </div>
 
-                <div class="product-card">
-                    <div class="product-image-container">
-                        <img src="https://images.unsplash.com/photo-1645445644664-8f44112f334c?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxlc3ByZXNzbyUyMGNvZmZlZSUyMGN1cHxlbnwxfHx8fDE3NjQyMDQ1MTd8MA&ixlib=rb-4.1.0&q=80&w=1080" alt="Cappuccino Especial" class="product-image">
-                    </div>
-                    <div class="product-info">
-                        <h3>Cappuccino Especial</h3>
-                        <p>Equilibrio perfeito entre espresso, leite vaporizado e espuma cremosa.</p>
-                        <p class="product-price">R$ 12,00</p>
-                    </div>
-                </div>
-
-                <div class="product-card">
-                    <div class="product-image-container">
-                        <img src="https://images.unsplash.com/photo-1672570050756-4f1953bde478?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxjb2ZmZWUlMjBiZWFucyUyMHJvYXN0ZWR8ZW58MXx8fHwxNzY0MTg2NDQ1fDA&ixlib=rb-4.1.0&q=80&w=1080" alt="Café Coado" class="product-image">
-                    </div>
-                    <div class="product-info">
-                        <h3>Café Coado</h3>
-                        <p>Método tradicional que realça as notas únicas de cada origem.</p>
-                        <p class="product-price">R$ 10,00</p>
-                    </div>
-                </div>
-
-                <div class="product-card">
-                    <div class="product-image-container">
-                        <img src="https://images.unsplash.com/photo-1645445644664-8f44112f334c?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxlc3ByZXNzbyUyMGNvZmZlZSUyMGN1cHxlbnwxfHx8fDE3NjQyMDQ1MTd8MA&ixlib=rb-4.1.0&q=80&w=1080" alt="Latte Art" class="product-image">
-                    </div>
-                    <div class="product-info">
-                        <h3>Latte Art</h3>
-                        <p>Café com leite decorado artisticamente, uma experiência visual e sensorial.</p>
-                        <p class="product-price">R$ 14,00</p>
-                    </div>
-                </div>
-
-                <div class="product-card">
-                    <div class="product-image-container">
-                        <img src="https://images.unsplash.com/photo-1587912001191-0cd4f14fd89e?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxwYXN0cmllcyUyMGNyb2lzc2FudHxlbnwxfHx8fDE3NjQyNDMwNjB8MA&ixlib=rb-4.1.0&q=80&w=1080" alt="Croissant Artesanal" class="product-image">
-                    </div>
-                    <div class="product-info">
-                        <h3>Croissant Artesanal</h3>
-                        <p>Folhado e crocante, preparado diariamente com manteiga francesa.</p>
-                        <p class="product-price">R$ 9,00</p>
-                    </div>
-                </div>
-
-                <div class="product-card">
-                    <div class="product-image-container">
-                        <img src="https://images.unsplash.com/photo-1587912001191-0cd4f14fd89e?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxwYXN0cmllcyUyMGNyb2lzc2FudHxlbnwxfHx8fDE3NjQyNDMwNjB8MA&ixlib=rb-4.1.0&q=80&w=1080" alt="Doces Variados" class="product-image">
-                    </div>
-                    <div class="product-info">
-                        <h3>Doces Variados</h3>
-                        <p>Seleção de brownies, cookies e bolos caseiros.</p>
-                        <p class="product-price">A partir de R$ 7,00</p>
-                    </div>
-                </div>
+            <div style="text-align: center; margin-top: 30px;">
+                <a href="/produtos" class="btn-primary" style="display: inline-block; background-color: #8b6f47; color: white; padding: 12px 30px; border-radius: 5px; text-decoration: none; transition: background-color 0.3s;">
+                    Ver Todos os Produtos →
+                </a>
             </div>
         </div>
     </section>
